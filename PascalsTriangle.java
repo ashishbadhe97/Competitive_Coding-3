@@ -12,18 +12,18 @@ class Solution {
     public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> result = new ArrayList<>();
 
-        for(int i = 2 ; i < numRows ; i++){
+        for(int i = 0 ; i < numRows ; i++){
 
             List<Integer> currList = new ArrayList<>();
 
             for(int j = 0 ; j <= i ; j++){
 
-                if(j == 0 || j == i){ // if first or last index , fill with 1
+                if(j == 0 || j == i){
                     currList.add(1);
                 }else{
                     List<Integer> prevList = result.get(i - 1);
 
-                    int currNumber = prevList.get(j - 1) + prevList.get(j); // else add previous list elements
+                    int currNumber = prevList.get(j - 1) + prevList.get(j);
 
                     currList.add(currNumber);
                 }
